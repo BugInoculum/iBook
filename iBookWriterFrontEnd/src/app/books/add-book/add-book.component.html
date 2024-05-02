@@ -1,0 +1,30 @@
+<div>
+  <div class="submit-form">
+    <div *ngIf="!submitted">
+      <div class="form-group">
+        <label for="title">Title</label>
+        <br>
+        <input
+          type="text"
+          class="form-control"
+          id="title"
+          required
+          [(ngModel)]="book.title"
+          name="title"
+        />
+      </div>
+      <br>
+      <div>
+        <label>Content</label>
+        <br>
+      <app-tiptap-editor (saveEvent)="saveEditorContent($event)" ></app-tiptap-editor>
+        <br>
+      </div>
+    </div>
+
+    <div *ngIf="submitted">
+      <h4>Book was submitted successfully!</h4>
+      <button class="btn btn-success" (click)="newBook()">Add</button>
+    </div>
+  </div>
+</div>

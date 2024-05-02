@@ -1,0 +1,10 @@
+<div *ngIf="editor">
+  <tiptap-editor class="book-editor" [editor]="editor"></tiptap-editor>
+  <tiptap-bubble-menu [editor]="editor" [tippyOptions]=this.tippyOptionsCustom>
+    <button>{{this.doubleClicked}}</button>
+  </tiptap-bubble-menu>
+  <div class="footer d-flex align-items-center">
+    <button mat-flat-button class="small mr-8" color="primary" (click)="save($event)"> <span class="button-text">Save</span></button>
+  </div>
+
+</div>
